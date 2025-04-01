@@ -1,0 +1,17 @@
+'$schema': 'https://git.drupalcode.org/project/drupal/-/raw/HEAD/core/assets/schemas/v1/metadata.schema.json'
+name: Image
+status: stable
+group: Atom/Media
+description: An image element
+props:
+  type: object
+  properties:
+    image:
+      $ref: json-schema-definitions://experience_builder.module/image
+      type: object
+      title: 'Image'
+      examples:
+        - src: https://example.com/cat.jpg
+          alt: 'Boring placeholder'
+          width: 600
+          height: 400

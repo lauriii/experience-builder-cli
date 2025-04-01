@@ -1,0 +1,53 @@
+{
+  "name": "experience-builder-cli",
+  "version": "0.1.0",
+  "description": "CLI tool for managing Experience Builder components",
+  "main": "dist/index.js",
+  "bin": {
+    "xb": "./dist/index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "swc src -d dist",
+    "dev": "swc src -d dist --watch",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "start": "node dist/index.js",
+    "test": "vitest run"
+  },
+  "engines": {
+    "node": "^20.0.0"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "experience-builder",
+    "drupal",
+    "cli"
+  ],
+  "dependencies": {
+    "@clack/prompts": "^0.7.0",
+    "@swc/cli": "^0.1.62",
+    "@swc/core": "^1.3.75",
+    "axios": "^1.6.7",
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "dotenv": "^16.4.5",
+    "form-data": "^4.0.0",
+    "glob": "^10.3.10",
+    "js-yaml": "^4.1.0",
+    "jsonschema": "^1.4.1"
+  },
+  "devDependencies": {
+    "@types/babel__core": "^7.20.1",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.11.17",
+    "@typescript-eslint/eslint-plugin": "^7.0.1",
+    "@typescript-eslint/parser": "^7.0.1",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.2"
+  }
+}

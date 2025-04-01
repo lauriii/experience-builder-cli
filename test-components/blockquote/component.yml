@@ -1,0 +1,18 @@
+machineName: blockquote
+name: Blockquote
+required:
+  - text
+props:
+  text:
+    title: Text
+    type: string
+    examples:
+      - Insert a quote...
+    $ref: json-schema-definitions://experience_builder.module/textarea
+  name:
+    title: Name
+    type: string
+  title:
+    title: Title
+    type: string
+slots: []

@@ -1,0 +1,21 @@
+name: Hello World
+machineName: hello_world
+description: A simple Hello World component
+props:
+  properties:
+    greeting:
+      type: string
+      title: Greeting
+      description: The greeting to display
+      default: Hello World
+    color:
+      type: string
+      title: Text Color
+      description: Color of the greeting text
+      format: color
+      default: "#333333"
+slots:
+  content:
+    title: Content
+    description: Content to display below the greeting
+required: []
