@@ -256,7 +256,9 @@ export async function buildComponent(componentDir: string, framework?: 'react' |
     }
 
     try {
-      console.log(`Processing component ${componentName} with SWC...`);
+      if (verbose) {
+        console.log(`[VERBOSE] Processing component ${componentDir} with SWC...`);
+      }
 
       // Check for JavaScript files in different locations
       const componentName = path.basename(componentDir);
@@ -275,7 +277,7 @@ export async function buildComponent(componentDir: string, framework?: 'react' |
       const cssPath = path.join(componentDir, 'index.css');
 
       if (verbose) {
-        console.log(`Processing component CSS: ${cssPath}...`);
+        console.log(`[VERBOSE] Processing component CSS: ${cssPath}...`);
       }
 
       // Try each CSS path
@@ -337,7 +339,6 @@ export async function buildAllComponents(directoryPath: string): Promise<Compone
       }
 
       const componentPath = path.join(directoryPath, dir.name);
-      console.log(`Processing ${dir.name}...`);
 
       // Detect component type first
       const typeResult = await detectComponentType(componentPath);

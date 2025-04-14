@@ -106,7 +106,7 @@ export function downloadCommand(program: Command): void {
           const component = componentsToDownload[key];
           try {
             // Create component directory structure
-            const componentDir = path.join(config.component_dir, component.name.toLowerCase().replace(/[^a-z0-9-]/g, '-'));
+            const componentDir = path.join(config.component_dir, component.machineName);
             const distDir = path.join(componentDir, 'dist');
 
             await fs.rm(componentDir, { recursive: true, force: true });
@@ -121,7 +121,7 @@ export function downloadCommand(program: Command): void {
             };
 
             await fs.writeFile(
-              path.join(componentDir, 'component.yml'),
+              path.join(componentDir, `${component.machineName}.component.yml`),
               yaml.dump(metadata),
               'utf-8'
             );
@@ -129,7 +129,7 @@ export function downloadCommand(program: Command): void {
             // Create JS file
             if (component.source_code_js) {
               await fs.writeFile(
-                path.join(componentDir, 'index.js'),
+                path.join(componentDir, 'index.jsx'),
                 component.source_code_js,
                 'utf-8'
               );
