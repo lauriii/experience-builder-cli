@@ -3,7 +3,6 @@
 import { Command } from 'commander';
 import { uploadCommand } from './commands/upload.js';
 import { downloadCommand } from './commands/download.js';
-import { updateCommand } from './commands/update.js';
 import { listCommand } from './commands/list.js';
 import { buildCommand } from './commands/build.js';
 import { scaffoldCommand } from './commands/scaffold.js';
@@ -37,7 +36,6 @@ Environment variables can be set in:
 initCommand(program);
 uploadCommand(program);
 downloadCommand(program);
-updateCommand(program);
 listCommand(program);
 buildCommand(program);
 scaffoldCommand(program);
